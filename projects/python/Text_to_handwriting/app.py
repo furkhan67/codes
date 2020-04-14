@@ -38,7 +38,7 @@ def make_page(img_list,filename):
  img = Image.open(filename)
  x, y = 2480,3508 #page size
  img = img.resize((x,y),Image.ANTIALIAS)
- img.save(filename,quality=95)
+ img.save(filename,quality=55)
  
  
 
