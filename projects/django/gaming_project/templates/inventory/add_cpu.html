@@ -1,0 +1,13 @@
+<body>
+    <h1>Add CPU</h1>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type='submit' ></input>
+        </form>
+        
+
+    </div>
+</body>

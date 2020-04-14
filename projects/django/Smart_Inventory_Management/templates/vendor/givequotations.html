@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart25.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+{% include 'main/head.html' %}<br><br>
+{% include 'vendor/vendor_menu.html' %}<br><br>
+
+<form action="/addquotation/" method="post">
+    {% csrf_token %}
+<table align="center" border="0">
+    <tr>
+        <td>Quotation_ID :</td>
+        <td>
+            <input type="number" name="qid">
+        </td>
+    </tr>
+    <tr>
+        <td>Tender_ID :</td>
+        <td>
+            <select name="tenderid">
+                {% for x in data1 %}
+                    <option>{{ x.id }}</option>
+                {% endfor %}
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Vendor_ID :</td>
+        <td>
+            <select name="vendorid">
+                {% for x in data2 %}
+                    <option>{{ x.id }}</option>
+                {% endfor %}
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Required_Products :</td>
+        <td>
+            <select name="requiredproduct">
+                <option>Samsung</option>
+                <option>OPPO</option>
+                <option>VIVO</option>
+                <option>MI</option>
+                <option>OnePlus</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Cost_Per_Item :</td>
+        <td>
+            <input type="number" name="costperitem">
+        </td>
+    </tr>
+{#    <tr>#}
+{#        <td>Supply_Date :</td>#}
+{#        <td>#}
+{#            <input type="date" name="supplydate">#}
+{#        </td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#        <td>Apply_Date :</td>#}
+{#        <td>#}
+{#            <input type="date" name="applydate">#}
+{#        </td>#}
+{#    </tr>#}
+    <tr>
+        <th colspan="2"><br>
+            <button type="submit">Add</button>
+        </th>
+    </tr>
+</table>
+<center><font size="5" color="#006400">{{ meesage }}</font> </center>
+</form>
+</body>
+</html>

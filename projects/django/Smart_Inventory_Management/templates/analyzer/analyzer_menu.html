@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analyzer menu</title>
+    {% load staticfiles %}
+    <style>
+        .button {
+            background-color: silver;
+            border: none;
+            color: black;
+            padding: 3px 8px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body  background="{% static 'images/smart2.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+{% include 'main/head.html' %}<br><br>
+
+<table align="center" border="0">
+    <tr>
+        <th>
+            <style>
+                .dropbtn {
+                    background-color: silver;
+                    color: black;
+                    padding: 5px;
+                    font-size:15px;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: skyblue;
+                    min-width: 5px;
+                    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
+                    z-index: 1;
+                }
+
+                .dropdown-content a  {
+                    color: black;
+                    padding: 0px 0px;
+                    text-decoration: dashed;
+                    display: block;
+                }
+
+                .dropdown-content a:hover {background-color: rosybrown}
+
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                }
+            </style>
+
+            <div class="dropdown">
+                <button class="dropbtn">Reports</button>
+                <div class="dropdown-content">
+                    <a href="/analyzerquotationreports/">Quotation Reports</a>
+                    <a href="/analyzerdeliverablereports/">Deliverable Reports</a>
+                </div>
+            </div>
+        </th>
+
+{#        <th>#}
+{#            #}
+{##}
+{#            <div class="dropdown">#}
+{#                <button class="dropbtn">Profile Management</button>#}
+{#                <div class="dropdown-content">#}
+{#                    <a href="//">View Profile</a>#}
+{#                    <a href="//">Update Profile</a>#}
+{#                    <a href="//">Change Password</a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </th>#}
+<form action="/home/">
+        <th>
+            <button class="button">LogOut</button>
+        </th>
+</form>
+{#        <th width="80"><a href="/analyzerreports/">Reports</a></th>#}
+{#        <th width="200"><a href="//"> Profile Management</a></th>#}
+{#        <th width="80"><a href="/home/"> LogOut</a></th>#}
+{#    </tr>#}
+</table>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .button {
+            background-color: dodgerblue;
+            border: none;
+            color: black;
+            padding: 3px 8px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+            <style>
+                .dropbtn {
+                    background-color: silver;
+                    color: black;
+                    padding: 5px;
+                    font-size:15px;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: silver;
+                    min-width: 5px;
+                    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
+                    z-index: 1;
+                }
+
+                .dropdown-content a  {
+                    color: black;
+                    padding: 10px 15px;
+                    text-decoration: dashed;
+                    display: block;
+                }
+
+                .dropbtn-content a:hover {background-color: silver}
+
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                }
+            </style>
+
+</head>
+<body>
+
+
+            <table border="0" align="center">
+                <tr>
+                    <form action="/employee/">
+                        <th>
+                            <button class="button">Employee</button>
+                        </th>
+                    </form>
+                    <form action="/tender/">
+                        <th>
+                            <button class="button">Tenders</button>
+                        </th>
+                    </form>
+                    <form action="/quotations/">
+                        <th>
+                            <button class="button">Quotations</button>
+                        </th>
+                    </form>
+                    <form action="/vendorreports/">
+                        <th>
+                            <button class="button">Vendor Reports</button>
+                        </th>
+                    </form><form action="/employeereports/">
+                        <th>
+                            <button class="button">Employee Reports</button>
+                        </th>
+                    </form><form action="/inwardsreports/">
+                        <th>
+                            <button class="button">Inwards Reports</button>
+                        </th>
+                    </form>
+                </tr>
+                <tr>
+                    <form action="/paymentreports/">
+                        <th>
+                            <button class="button">Payment Reports</button>
+                        </th>
+                    </form>
+                    <form action="/viewprofile/">
+                        <th>
+                            <button class="button">View Profile</button>
+                        </th>
+                    </form>
+                    <form action="/updateprofile/">
+                        <th>
+                            <button class="button">Update Profile</button>
+                        </th>
+                    </form>
+                    <form action="/changeadminpassword/">
+                        <th>
+                            <button class="button">Change Password</button>
+                        </th>
+                    </form>
+                    <form action="/approvevendors/">
+                        <th>
+                            <button class="button">Approve Vendor</button>
+                        </th>
+                    </form>
+                    <form action="/home/">
+                        <th>
+                            <button class="button">LogOut</button>
+                        </th>
+                    </form>
+
+                </tr>
+
+            </table>
+</body>
+</html>

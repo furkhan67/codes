@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View_Employee</title>
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart24.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+{% include 'main/head.html' %}<br><br>
+{% include 'admin/admin_menu.html' %}<br><br>
+
+<table align="center" border="0">
+
+    <tr>
+        <th>IDNO : </th>
+        <td>{{ object.idno  }}</td>
+    </tr>
+    <tr>
+        <th>Name : </th>
+        <td>{{ object.username  }}</td>
+    </tr>
+    <tr>
+        <th>Designation :</th>
+        <td>{{ object.type  }}</td>
+    </tr>
+    <tr>
+        <th>Contact-No : </th>
+        <td>{{ object.contact  }}</td>
+    </tr>
+    <tr>
+        <th>Email-Id : </th>
+        <td>{{ object.email  }}</td>
+    </tr>
+    <tr>
+        <th>Password : </th>
+        <td>{{ object.password }}</td>
+    </tr>
+
+</table>
+
+
+</body>
+</html>

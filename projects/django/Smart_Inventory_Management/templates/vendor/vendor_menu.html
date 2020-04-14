@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .button {
+            background-color: silver;
+            border: none;
+            color: black;
+            padding: 3px 8px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+            <style>
+                .dropbtn {
+                    background-color: silver;
+                    color: black;
+                    padding: 5px;
+                    font-size:15px;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: skyblue;
+                    min-width: 5px;
+                    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
+                    z-index: 1;
+                }
+
+                .dropdown-content a  {
+                    color: black;
+                    padding: 2px 3px;
+                    text-decoration: dashed;
+                    display: block;
+                }
+
+                .dropdown-content a:hover {background-color: rosybrown}
+
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                }
+            </style>
+
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart25.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+<table align="center" border="0">
+    <tr>
+        <form action="/product/">
+        <th width="50">
+            <button class="button">Products</button>
+        </th>
+        </form>
+        <th >
+        <div class="dropdown">
+                <button class="dropbtn">Production Management</button>
+                <div class="dropdown-content">
+                    <a href="/deliverproducts/">Deliver Products</a>
+                    <a href="/viewdeliveredproducts/">View Delivered Products</a>
+                    <a href="/venodorviewpayments/">View Payments</a>
+                </div>
+            </div>
+        </th>
+{#        <th >#}
+{#            <div class="dropdown">#}
+{#                <button class="dropbtn">Profile Management</button>#}
+{#                <div class="dropdown-content">#}
+{#                    <a href="//">View Profile</a>#}
+{#                    <a href="//">Update Profile</a>#}
+{#                    <a href="//">Change Password</a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </th>#}
+        </form>
+        <form action="/viewtenders/">
+        <th >
+            <button class="button">View Tenders</button>
+        </th>
+        </form>
+        <th >
+            <div class="dropdown">
+                <button class="dropbtn">Quotation Management</button>
+                <div class="dropdown-content">
+                    <a href="/givequotation">Give Quotation</a>
+                    <a href="/viewquotations/">View Quotation</a>
+                </div>
+            </div>
+        </th>
+        <form action="/home/">
+        <th >
+            <button class="button">LogOut</button>
+        </th>
+        </form>
+
+    </tr>
+</table>
+
+</body>
+</html>

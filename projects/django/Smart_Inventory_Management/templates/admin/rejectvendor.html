@@ -1,0 +1,37 @@
+<html>
+<head>
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart24.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+{% include 'main/head.html' %}<br><br>
+{% include 'admin/admin_menu.html' %}<br><br>
+<table align="center">
+    <tr>
+        <th colspan="2">Confirm Delete?</th>
+    </tr>
+    <tr>
+        <form method="post">
+            {% csrf_token %}
+
+        <th>
+            <button type="submit">Yes</button>
+        </th>
+            </form>
+        <form action="/approvevendors/">
+            {% csrf_token %}
+
+        <th>
+            <button type="submit">No</button>
+        </th>
+            </form>
+    </tr>
+</table>
+</body>
+</html>

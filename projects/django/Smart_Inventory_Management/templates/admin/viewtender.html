@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View_Tender</title>
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart24.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+{% include 'main/head.html' %}<br><br>
+{% include 'admin/admin_menu.html' %}<br><br>
+
+            <table align="center" border="0">
+    <tr>
+        <th>Tender_Id : </th>
+        <td>{{ object.id }}</td>
+    </tr>
+    <tr>
+        <th>Tender_Title : </th>
+        <td>{{ object.title  }}</td>
+    </tr>
+    <tr>
+        <th>Product :</th>
+        <td>{{ object.product  }}</td>
+    </tr>
+    <tr>
+        <th>Quantity : </th>
+        <td>{{ object.quantity  }}</td>
+    </tr>
+    <tr>
+        <th>Release_Date : </th>
+        <td>{{ object.release_date  }}</td>
+    </tr>
+    <tr>
+        <th>Last_Date : </th>
+        <td>{{ object.last_date }}</td>
+    </tr>
+    </table>
+
+
+</body>
+</html>

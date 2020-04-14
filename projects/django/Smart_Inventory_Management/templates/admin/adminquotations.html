@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quotations</title>
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart24.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+{% include 'main/head.html' %}<br><br>
+{% include 'admin/admin_menu.html' %}<br><br>
+{% if not object_list %}
+
+                <center>
+                    <font size="5" face="Arial" color="#8b0000">Sorry.. <br>No Quotations Are Available</font>
+                </center>
+
+            {% else %}
+
+
+             <table align="center" border="2">
+    <tr>
+        <th width="50">QID</th>
+        <th width="50">Tendor_Id</th>
+        <th width="50">Vendor_Id</th>
+        <th width="150">Required Product</th>
+        <th width="100">Cost Per Item</th>
+{#        <th width="100">Supply_Date</th>#}
+{#        <th width="100">Apply_Date</th>#}
+        <th width="80">Status</th>
+        <th width="50">Accept</th>
+        <th width="50">Reject</th>
+    </tr>
+    {% for x in object_list %}
+        <tr>
+        <td width="50">{{ x.qid }}</td>
+        <td width="50">{{ x.tender_id }}</td>
+        <td width="50">{{ x.vendor_id }}</td>
+        <td width="150">{{ x.required_product }}</td>
+        <td width="100">{{ x.cost_per_item }}</td>
+{#        <td width="100">{{ x.supply_date }}</td>#}
+{#        <td width="50">{{ x.apply_date }}</td>#}
+        <td width="50">{{ x.status }}</td>
+        <th>
+            <form action="/acceptquotation/" method="post">
+                {% csrf_token %}
+                <input type="hidden" value="{{ x.qid }}" name="qid">
+                <input type="hidden" value="{{ x.tender_id }}" name="tenderid">
+                <input type="hidden" value="{{ x.vendor_id }}" name="vendorid">
+                <input type="hidden" value="{{ x.required_product }}" name="requiredproduct">
+                <input type="hidden" value="{{ x.cost_per_item }}" name="costperitem">
+{#                <input type="hidden" value="{{ x.supply_date }}" name="supplydate">#}
+{#                <input type="hidden" value="{{ x.apply_date }}" name="applydate">#}
+                <button type="submit">Yes</button>
+            </form>
+        </th>
+        <th>
+            <a href="/rejectquotation{{ x.qid }}/">Yes</a>
+        </th>
+        </tr>
+    {% endfor %}
+            </table>
+
+{% endif %}
+<br><br>
+<center><font size="5" color="#006400">{{ message }}</font> </center>
+</body>
+</html>

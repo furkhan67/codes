@@ -1,0 +1,42 @@
+<html>
+<head>
+    {% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart25.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+    {% include 'main/head.html' %}<br><br>
+    {% include 'vendor/vendor_menu.html' %}<br><br>
+
+    <table align="center" border="2">
+        <tr>
+            <th width="50">QID</th>
+            <th width="50">Tender_ID</th>
+            <th width="50">Vendor_ID</th>
+            <th width="100">Required_Products</th>
+            <th width="80">Cost_Per_Item</th>
+{#            <th width="100">Supply_Date</th>#}
+{#            <th width="100">Apply_Date</th>#}
+            <th width=80">Status</th>
+        </tr>
+        {% for x in data %}
+            <tr>
+                <td width="50">{{ x.qid }}</td>
+                <td width="50">{{ x.tender_id }}</td>
+                <td width="50">{{ x.vendor_id }}</td>
+                <td width="100">{{ x.required_product }}</td>
+                <td width="80">{{ x.cost_per_item }}</td>
+{#                <td width="100">{{ x.supply_date }}</td>#}
+{#                <td width="100">{{ x.apply_date }}</td>#}
+                <td width="80">{{ x.status }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

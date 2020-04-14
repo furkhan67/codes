@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Home</title>
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart24.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+{% include 'main/head.html' %}<br><br>
+{% include 'admin/admin_menu.html' %}<br><br>
+<table align="center">
+    <tr>
+        <th>
+           <font size="5" face="Graffiti"  >
+            Welcome <br>Admin<br>To <br>Smart Inventory<br> Management System
+                </font>
+        </th>
+    </tr>
+</table>
+</body>
+</html>

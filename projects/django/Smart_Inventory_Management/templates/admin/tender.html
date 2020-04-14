@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tender</title>
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart24.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+{% include 'main/head.html' %}<br><br>
+{% include 'admin/admin_menu.html' %}<br><br>
+
+<table align="center" border="0">
+    <tr>
+        <th width="100">
+            <form action="/releasetender/" method="post">
+                {% csrf_token %}
+                <table align="center" border="2">
+                    <tr>
+                        <th><font size="4" color="#dc143c">Release Tender</font> </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" placeholder="Tender_Id" name="id">
+                        </td>
+                    </tr>
+                    <tr>
+                {#        <td>Tender Title :</td>#}
+                        <td>
+                            <input type="text" placeholder="Tender Title" name="title">
+                        </td>
+                    </tr>
+                    <tr>
+                {#        <td>Product :</td>#}
+                        <td>
+                            <select name="product">
+                                <option>Samsung</option>
+                                <option>OPPO</option>
+                                <option>VIVO</option>
+                                <option>MI</option>
+                                <option>OnePlus</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" placeholder="Quantity" name="quantity">
+                        </td>
+                    </tr>
+                    <tr>
+                {#        <td>Release_Date :</td>#}
+                        <td>
+                            <input type="date" placeholder="Release_Date" name="release_date">
+                        </td>
+                    </tr>
+
+                    <tr>
+                {#        <td>Last_Date : </td>#}
+
+                        <td>
+                            <input type="date" placeholder="Last_Date" name="last_date">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <button type="submit">Release</button>
+                        </th>
+                    </tr>
+                </table>
+            </form>
+        </th>
+             <font size="4" color="#006400">{{ message }}</font>
+
+        <th width="500">
+        {% if not data %}
+            <table align="center">
+                <center>
+                    <font size="5" color="#8b0000">Sorry.. No Tenders Are Available</font>
+                </center>
+            </table>
+        {% else %}
+            <table align="center" border="2">
+                <tr>
+                    <th width="100">Tender_Id</th>
+                    <th width="100">Title</th>
+                    <th width="100">View</th>
+                    <th width="100">Update</th>
+                    <th width="100">Delete</th>
+                </tr>
+                {% for x in data %}
+                    <tr>
+                        <td width="100">{{ x.id }}</td>
+                        <td width="100">{{ x.title }}</td>
+                        <td width="100">
+                            <a href="/viewtender{{ x.id }}/">Yes</a>
+                        </td>
+                        <th width="100">
+                            <a href="/updatetender{{ x.id }}/">Yes</a>
+                        </th>
+                        <th width="100">
+                            <a href="/deletetender{{ x.id }}/">Yes</a>
+                        </th>
+                    </tr>
+                {% endfor %}
+
+
+
+            </table>
+        {% endif %}
+        </th>
+    </tr>
+</table>
+</body>
+</html>
+
+

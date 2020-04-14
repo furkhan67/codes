@@ -1,0 +1,39 @@
+<html>
+<body>
+
+{% include 'analyzer/analyzer_menu.html' %}<br><br>
+{% if not object_list %}
+
+                <center>
+                    <font size="5" face="Arial" color="#8b0000">Sorry.. <br>No Quotations Are Available</font>
+                </center>
+{% else %}
+
+
+<table align="center" border="2">
+    <tr>
+        <th width="50">QID</th>
+        <th width="50">Tendor_Id</th>
+        <th width="50">Vendor_Id</th>
+        <th width="150">Required Product</th>
+        <th width="100">Cost Per Item</th>
+{#        <th width="100">Supply_Date</th>#}
+{#        <th width="100">Apply_Date</th>#}
+        <th width="80">Status</th>
+    </tr>
+{% for x in object_list %}
+    <tr>
+        <td width="50">{{ x.qid }}</td>
+        <td width="50">{{ x.tender_id }}</td>
+        <td width="50">{{ x.vendor_id }}</td>
+        <td width="150">{{ x.required_product }}</td>
+        <td width="100">{{ x.cost_per_item }}</td>
+{#        <td width="100">{{ x.supply_date }}</td>#}
+{#        <td width="50">{{ x.apply_date }}</td>#}
+        <td width="50">{{ x.status }}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endif %}
+</body>
+</html>

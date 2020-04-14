@@ -1,0 +1,93 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        .button {
+            background-color: bisque;
+            border: none;
+            color: red;
+            padding: 1px 3px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+<body  background="{% static 'images/smart23.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+
+{% include 'main/head.html' %}<br><br>
+{% include 'main/menu.html' %}<br><br>
+<table align="center" background="{% static 'images/smart12.jpg' %}">
+
+    <tr>
+
+        <th>
+
+            <table align="center">
+                <form action="/loginadmin/" method="post">
+                {% csrf_token %}
+
+                <tr><th colspan="2" width="250" height="28"><font size="5" color="#dc143c" >Login Page</font></th></tr>
+                <tr>
+                    <th colspan="2"><br>
+                        <input type="text" placeholder="Username" name="username">
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <input type="password" placeholder="Password" name="password">
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <select name="type">
+                            <option>Admin</option>
+                            <option>Area Manager</option>
+                            <option>Analyzer</option>
+                            <option>Vendor</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th width="50">
+                        <button type="submit">Login</button>
+                    </th>
+{#                    <th width="50">#}
+{#                        <button type="submit">Clear</button>#}
+{#                    </th>#}
+{#                </tr>#}
+                </tr>
+            </form>
+                <tr>
+                <form action="/newvendor/">
+                    {% csrf_token %}
+                    <th colspan="2"><br>
+                        <button class="button">New Vendor</button>
+                    </th>
+                </form>
+                </tr>
+
+            </table>
+
+
+        </th>
+    </tr>
+</table><br>
+<center><font size="5" color="#ffe4b5">{{ message }}</font> </center>
+
+
+</body>
+</html>

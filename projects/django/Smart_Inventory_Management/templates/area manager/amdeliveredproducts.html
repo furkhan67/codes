@@ -1,0 +1,40 @@
+<html>
+<head>
+   {% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart23.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+{% include 'main/head.html' %}<br><br>
+{% include 'area manager/area_manager_menu.html' %}<br><br><br>
+        <table align="center" border="2">
+            <tr>
+                <th width="100">Deliver_ID</th>
+                <th width="100">Tender_ID</th>
+                <th width="100">Product_Name</th>
+                <th width="100">Delivery_Date</th>
+            </tr>
+            {% for x in object_list %}
+                <tr>
+                <td width="100">{{ x.deliver_id }}</td>
+                <td width="100">{{ x.tender_id }}</td>
+                <td width="100">{{ x.product_name }}</td>
+                <td width="100">{{ x.deliver_date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+</body>
+</html>

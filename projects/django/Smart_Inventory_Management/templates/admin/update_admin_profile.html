@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update_Admin_Profile</title>
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart24.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+{% include 'main/head.html' %}<br><br>
+{% include 'admin/admin_menu.html' %}<br><br>
+            <form action="/updateadmin/" method="post">
+{% for x in data %}
+
+    {% csrf_token %}
+    <table align="center" border="2">
+    <tr>
+        <td>
+            <input type="text" value="{{ x.username }}" name="username" readonly>
+        </td>
+    </tr>
+        <tr>
+        <td>
+            <input type="password" value="{{ x.password }}" name="password">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" value="{{ x.type }}" name="type">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="number" value="{{ x.contact }}" name="contact">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="email" value="{{ x.email }}" name="email">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" name="address" value="{{ x.address }}">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <button type="submit">Update</button>
+        </th>
+    </tr>
+    </table>
+
+{% endfor %}
+</form>
+</body>
+</html>

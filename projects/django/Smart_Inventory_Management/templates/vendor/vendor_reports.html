@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vendor Reports</title>
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart24.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+{% include 'main/head.html' %}<br><br>
+{% include 'admin/admin_menu.html' %}<br><br>
+{% if not object_list %}
+
+                <center>
+                    <font size="5" face="Arial" color="#8b0000">Sorry.. <br>No Vendor Reports Are Available</font>
+                </center>
+
+            {% else %}
+
+
+            <table align="center" border="2">
+                <tr>
+                    <th width="100">Id</th>
+                    <th width="100">Name</th>
+                    <th width="100">Comp_Name</th>
+                    <th width="100">Contact_No</th>
+                    <th width="100">Email-Id</th>
+                    <th width="100">Address</th>
+                    <th width="100">Status</th>
+
+                </tr>
+            <tr>
+                {% for x in object_list %}
+                    <td width="100">{{ x.id }}</td>
+                    <td width="100">{{ x.name }}</td>
+                    <td width="100">{{ x.comp_name }}</td>
+                    <td width="100">{{ x.contact }}</td>
+                    <td width="100">{{ x.email }}</td>
+                    <td width="100">{{ x.address }}</td>
+                    <td width="100">{{ x.status }}</td>
+
+                    </tr>
+                {% endfor %}
+            </table>
+
+{% endif %}
+
+</body>
+</html>

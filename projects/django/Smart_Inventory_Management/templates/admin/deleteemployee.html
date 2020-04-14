@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Employee</title>
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart24.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+{% include 'main/head.html' %}<br><br>
+{% include 'admin/admin_menu.html' %}<br><br>
+<table align="center">
+    <tr>
+        <th width="500"><table align="center">
+            <tr>
+        <th colspan="2">
+            <h2><font size="5" color="red" >Confirm Delete?</font></h2>
+        </th>
+    </tr>
+            <tr>
+        <form method="post">
+            {% csrf_token %}
+        <th>
+            <button type="submit">Yes</button>
+        </th>
+            </form>
+        <th>
+            <form action="/employee/">
+            <button type="submit">No</button>
+                </form>
+        </th>
+
+    </tr>
+        </table> </th>
+    </tr>
+
+
+</table>
+
+</body>
+</html>

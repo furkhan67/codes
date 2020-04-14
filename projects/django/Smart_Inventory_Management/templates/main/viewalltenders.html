@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tendor Reports</title>
+    {% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart16.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+{% include 'main/head.html' %}<br><br>
+{% include 'main/menu.html' %}<br><br>
+
+{% if not object_list %}
+
+                <center>
+                    <font size="5" face="Arial" color="#8b0000">Sorry.. <br>No Tendor Reports Are Available</font>
+                </center>
+
+            {% else %}
+
+
+            <table align="center" border="2">
+                <tr>
+                    <th width="100">Id</th>
+                    <th width="100">Title</th>
+                    <th width="100">Product</th>
+                    <th width="100">Quantity</th>
+                    <th width="100">Release_Date</th>
+                    <th width="100">Last_Date</th>
+
+                </tr>
+            <tr>
+                {% for x in object_list %}
+                    <td width="100">{{ x.id }}</td>
+                    <td width="100">{{ x.title }}</td>
+                    <td width="100">{{ x.product }}</td>
+                    <td width="100">{{ x.quantity }}</td>
+                    <td width="100">{{ x.release_date }}</td>
+                    <td width="100">{{ x.last_date }}</td>
+
+                    </tr>
+                {% endfor %}
+            </table>
+
+{% endif %}
+
+</body>
+</html>

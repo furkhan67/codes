@@ -1,0 +1,33 @@
+<html>
+<head>
+    {% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart25.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+{% include 'main/head.html' %}<br><br>
+{% include 'vendor/vendor_menu.html' %}<br><br>
+
+<table align="center" border="2">
+    <tr>
+        <th width="100">Payment_ID</th>
+        <th width="100">Deliver_ID</th>
+        <th width="100">Tender_ID</th>
+        <th width="100">Payment_Date</th>
+    </tr>
+    {% for x in object_list %}
+    <tr>
+        <td width="100">{{ x.payment_Id }}</td>
+        <td width="100">{{ x.deliver_idno }}</td>
+        <td width="100">{{ x.tender_idno }}</td>
+        <td width="100">{{ x.payment_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

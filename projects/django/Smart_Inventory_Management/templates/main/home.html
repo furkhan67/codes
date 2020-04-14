@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+{% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart11.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+{% include 'main/head.html' %}<br><br>
+{% include 'main/menu.html' %}<br><br><br>
+<table align="center">
+    <tr>
+        <th width="500" >
+            <font size="6"  color="#ff4500">
+            Welcome <br>To <br>Smart Inventory<br> Management System
+                </font>
+        </th>
+    </tr>
+</table>
+
+</body>
+</html>

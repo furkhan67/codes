@@ -1,0 +1,75 @@
+<html>
+<head>
+    {% load staticfiles %}
+    <style>
+        .button {
+            background-color: green;
+            border: none;
+            color: black;
+            padding: 1px 3px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body  background="{% static 'images/smart14.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+{% include 'main/head.html' %}<br><br>
+{% include 'main/menu.html' %}<br><br>
+<form action="/savevendor/" method="post">
+    {% csrf_token %}
+    <table align="center" border="0">
+        <tr>
+            <th>Vendor_ID :</th>
+            <td>
+                <input type="number"  name="id">
+            </td>
+        </tr>
+        <tr>
+            <th>Vendor_Name :</th>
+            <td>
+                <input type="text"  name="name">
+            </td>
+        </tr>
+        <tr>
+            <th>Company_Name :</th>
+            <td>
+                <input type="text"  name="comp_name">
+            </td>
+        </tr>
+        <tr>
+            <th>Contact_No :</th>
+            <td>
+                <input type="number"  name="contact">
+            </td>
+        </tr>
+        <tr>
+            <th>Email-ID :</th>
+            <td>
+                <input type="email"  name="email">
+            </td>
+        </tr>
+        <tr>
+            <th>Address :</th>
+            <td>
+                <textarea name="address" ></textarea>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2"><br>
+                <button class="button">Add</button>
+            </th>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

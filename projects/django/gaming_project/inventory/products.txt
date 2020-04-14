@@ -1,0 +1,7 @@
+motherboard
+cpu
+gpu
+ram
+cooler/heatsink
+cabinet
+psu

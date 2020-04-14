@@ -1,0 +1,17 @@
+<body>
+<h1>CPUS</h1>
+
+{% for cpu in cpus %}
+<li>Name: {{ cpu.cpu_name }} Price: {{ cpu.cpu_unit_price }}  Chipsets: {{ cpu.supported_chipset }}</li>
+    
+{% endfor %}
+
+<h1>Motherboards</h1>
+{% for mobo in mobos %}
+<li>{{ mobo.mobo_name }}
+{% endfor %}
+<h1>Rams</h1>
+{% for ram in rams %}
+<li>{{ ram.ram_name }}
+{% endfor %}
+</body>

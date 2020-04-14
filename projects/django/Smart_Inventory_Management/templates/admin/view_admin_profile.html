@@ -1,0 +1,47 @@
+<html>
+<head>
+    {% load staticfiles %}
+</head>
+<body  background="{% static 'images/smart24.jpg' %}">
+<style>
+        body{
+            text-align: center;
+            background-size: cover;
+            background-repeat:no-repeat;
+        }
+    </style>
+
+{% include 'main/head.html' %}<br><br>
+{% include 'admin/admin_menu.html' %}<br><br>
+{% for x in data %}
+      <table align="center" border="0">
+      <tr>
+          <th> Name :</th>
+          <td>{{ x.username }}</td>
+      </tr>
+          <tr>
+              <th>Password : </th>
+              <td>{{ x.password }}</td>
+          </tr>
+          <tr>
+          <th>Type :</th>
+          <td>{{ x.type }}</td>
+          </tr>
+          <tr>
+          <th>Contact_No :</th>
+          <td>{{ x.contact }}</td>
+          </tr>
+          <tr>
+          <th>Email-Id :</th>
+          <td>{{ x.email }}</td>
+          </tr>
+          <tr>
+          <th>Address : </th>
+              <td>{{ x.address }}</td>
+          </tr>
+
+      </table>
+{% endfor %}
+
+</body>
+</html>
