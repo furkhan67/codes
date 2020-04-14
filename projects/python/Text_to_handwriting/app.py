@@ -10,6 +10,8 @@ cursive=base+"cursive/"
 numbers=base+"numbers/"
 symbols="fonts/symbols/"
 temp='temp/'
+no_of_characters_per_line = 50 #set how many char to add per line
+no_of_lines_per_page = 35       #set how many lines to add per page
 #create lines
 def make_line(list1,count):
  imgs    = [ Image.open(i) for i in list1 ]
@@ -44,9 +46,9 @@ listx=[i for i in x.read()]
 listx=listx[3:]
 listx.insert(0,"\n")
 
-#adding \n after every 50 letters
+#adding \n after every "no_of_characters_per_line" letters
 for i in range(0,len(listx)):
- if i%49==0:
+ if i%(no_of_characters_per_line-1)==0:
    if(i==0) :
      pass
     
@@ -69,14 +71,14 @@ for i in listx:
   list1.append('fonts/space.png')
  
   
- if i=='\n':        #counting linebreaks and completing 50 letters in each line 
+ if i=='\n':        #counting linebreaks and completing "no_of_characters_per_line" letters in each line 
   count=count+1
   list1.append('fonts/space.png')
 
   
    
-  if(len(list1)<50):
-   for i in range(len(list1),50,1):
+  if(len(list1)<no_of_characters_per_line):
+   for i in range(len(list1),no_of_characters_per_line,1):
     list1.append('fonts/space.png')
   make_line(list1,count) #creating a line
   del list1
@@ -148,12 +150,12 @@ i=0
 c=1
 while(len(list1)!=0):
   
-  if i>=0 and i<35 and len(list1)!=0:
+  if i>=0 and i<no_of_lines_per_page and len(list1)!=0:
     list2.append(list1[i])
     i+=1
     #print("appending"+str(i))
     
-    if len(list2)==35:    #make page if all lines completed
+    if len(list2)==no_of_lines_per_page:    #make page if all lines completed
       make_page(list2,"final"+str(c)+".png")
       print("made page "+str(c))
       c+=1
@@ -161,8 +163,8 @@ while(len(list1)!=0):
       continue
 
     elif len(list1)-len(list2)==0:    #make page after end of list1
-      if len(list2)<35:
-        for i in range(len(list2),35):
+      if len(list2)<no_of_lines_per_page:
+        for i in range(len(list2),no_of_lines_per_page):
           list2.append(base+"line.png")
       make_page(list2,"final"+str(c)+".png")
       print("made page "+str(c))
