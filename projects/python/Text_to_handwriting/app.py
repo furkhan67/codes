@@ -35,6 +35,10 @@ def make_page(img_list,filename):
  imgs_comb = np.vstack( (np.asarray( i.resize(min_shape) ) for i in imgs ) )
  imgs_comb = Image.fromarray( imgs_comb)
  imgs_comb.save(filename)
+ img = Image.open(filename)
+ x, y = 2480,3508 #page size
+ img = img.resize((x,y),Image.ANTIALIAS)
+ img.save(filename,quality=95)
  
  
 
