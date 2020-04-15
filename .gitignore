@@ -11,7 +11,7 @@ projects/python/assistant/versions
 projects/python/assistant/dist
 projects/python/assistant/build
 projects/vb.net
-
+flutter/
 
 # C extensions
 *.so
