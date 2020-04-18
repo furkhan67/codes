@@ -48,16 +48,61 @@ x=open("text.txt","r")
 list1=[]
 listx=[i for i in x.read()]
 listx=listx[3:]
-listx.insert(0,"\n")
 
+
+a=0
+b=1
+listc=[]
 #adding \n after every "no_of_characters_per_line" letters
+for i in range(0,len(listx)//no_of_characters_per_line):
+  listc=listx[a*no_of_characters_per_line:b*no_of_characters_per_line]
+  if "\n" in listc:
+    pass
+  else:
+    listx.insert(b*no_of_characters_per_line,"\n")
+  a+=1
+  b+=1
+  if (len(listx)-b*no_of_characters_per_line)==0:
+    break
+
+
+""" 
 for i in range(0,len(listx)):
- if i%(no_of_characters_per_line-1)==0:
+ if i%(no_of_characters_per_line)==0:
+   #print(i)
    if(i==0) :
      pass
     
    else:
-     listx.insert(i+1,"\n")
+     listx.insert(i,"\n")
+
+    
+for i in range(0,10):
+  print(str(i*50)+listx[i*50])
+
+x=1
+for i in range(0,len(listx)):
+ if i%(no_of_characters_per_line)>0:
+   if (len(listx)-i)>=22:
+    if(listx[i]=='\n') :
+      
+      if(listx[x*no_of_characters_per_line])=="\n":
+
+       del listx[x*no_of_characters_per_line]
+
+      else:
+        pass
+ elif i%(no_of_characters_per_line)==0:
+   if i==0:
+     pass
+   else:
+     x+=1
+
+   """   
+
+
+
+
 
 #adding line break in the end of the listx
 if '\n' in listx[-1]:
@@ -65,6 +110,7 @@ if '\n' in listx[-1]:
 else:
     listx.append('\n')
 
+listx.insert(0,"\n")
 print(listx)
 
 #print(listx)
