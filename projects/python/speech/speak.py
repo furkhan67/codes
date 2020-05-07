@@ -5,8 +5,8 @@ import time, os
 i=0
 def say(text, lang):
     global i
-    file = gTTS(text = text, lang = lang, slow=True)
-    filename = 'temp/i.mp3'
+    file = gTTS(text = text, lang = lang, slow=False)
+    filename = 'temp/'+str(i)+'.mp3'
     file.save(filename)
     i=i+1
 

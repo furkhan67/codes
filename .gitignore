@@ -6,6 +6,7 @@ __pycache__/
 #folders
 projects/django/SES
 projects/django/HUDA_project
+projects/django/pc_build_project
 html/
 projects/python/assistant/versions
 projects/python/assistant/dist

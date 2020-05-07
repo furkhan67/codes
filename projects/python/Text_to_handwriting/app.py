@@ -1,8 +1,12 @@
 import numpy as np
 from PIL import Image
 import gc
+import os
 
-Image.MAX_IMAGE_PIXELS = 1221120000 
+Image.MAX_IMAGE_PIXELS = 1221120000
+import os
+if not os.path.isdir('temp'):
+    os.mkdir('temp') 
 
 base ='fonts/'
 caps=base+"caps/"
