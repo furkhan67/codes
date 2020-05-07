@@ -14,6 +14,7 @@ cursive=base+"cursive/"
 numbers=base+"numbers/"
 symbols="fonts/symbols/"
 temp='temp/'
+output='output/'
 no_of_characters_per_line = 50 #set how many char to add per line
 no_of_lines_per_page = 35       #set how many lines to add per page
 #create lines
@@ -210,7 +211,7 @@ while(len(list1)!=0):
     #print("appending"+str(i))
     
     if len(list2)==no_of_lines_per_page:    #make page if all lines completed
-      make_page(list2,"final"+str(c)+".png")
+      make_page(list2,output+"final"+str(c)+".png")
       print("made page "+str(c))
       c+=1
       list2=[]
@@ -220,7 +221,7 @@ while(len(list1)!=0):
       if len(list2)<no_of_lines_per_page:
         for i in range(len(list2),no_of_lines_per_page):
           list2.append(base+"line.png")
-      make_page(list2,"final"+str(c)+".png")
+      make_page(list2,output+"final"+str(c)+".png")
       print("made page "+str(c))
       list2.clear
       list1.clear
