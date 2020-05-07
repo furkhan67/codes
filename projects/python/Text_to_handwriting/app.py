@@ -1,7 +1,7 @@
 import numpy as np
 from PIL import Image
 import gc
-import os
+import os,glob
 
 Image.MAX_IMAGE_PIXELS = 1221120000
 import os
@@ -224,6 +224,9 @@ while(len(list1)!=0):
       print("made page "+str(c))
       list2.clear
       list1.clear
+      filelist = [ f for f in os.listdir("temp/") if f.endswith(".png") ]
+      for f in filelist:
+          os.remove(os.path.join("temp/", f))
       print("done")
       break
   
