@@ -1,5 +1,5 @@
 requirements:
-python 3.6
+python>=3.6\n
 avbin dll from https://avbin.github.io/AVbin/Download.html
 
 Run main1.py
