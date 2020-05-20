@@ -1,0 +1,6 @@
+pyaudio
+gtts
+pyglet
+speechrecognition
+geocoder
+pillow
