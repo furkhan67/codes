@@ -8,15 +8,15 @@ import os
 if not os.path.isdir('temp'):
     os.mkdir('temp') 
 
-base ='fonts/'
+base ='fonts/set1/'
 caps=base+"caps/"
 cursive=base+"cursive/"
 numbers=base+"numbers/"
-symbols="fonts/symbols/"
+symbols=base+"symbols/"
 temp='temp/'
 output='output/'
-no_of_characters_per_line = 50 #set how many char to add per line
-no_of_lines_per_page = 35       #set how many lines to add per page
+no_of_characters_per_line = 35 #set how many char to add per line
+no_of_lines_per_page = 22       #set how many lines to add per page
 #create lines
 def make_line(list1,count):
  imgs    = [ Image.open(i) for i in list1 ]
@@ -47,12 +47,12 @@ def make_page(img_list,filename):
  
  
 
-x=open("text.txt","r")
+x=open("text.txt","r",encoding="utf8")
 #print("ENTER TEXT TO CONVERT")
 #x.write(input()+"\n")
 list1=[]
 listx=[i for i in x.read()]
-listx=listx[3:]
+#listx=listx[3:]
 
 
 a=0
@@ -121,72 +121,96 @@ print(listx)
 #print(listx)
 y=0
 count=0
-for i in listx:
+for i in range(0,len(listx)):
  if len(list1)==0:
-  list1.append('fonts/space.png')
+  list1.append(base+'space.png')
+
  
   
- if i=='\n':        #counting linebreaks and completing "no_of_characters_per_line" letters in each line 
+ if listx[i]=='\n':        #counting linebreaks and completing "no_of_characters_per_line" letters in each line 
   count=count+1
-  list1.append('fonts/space.png')
-
+  list1.append(base+'space.png')
+  """
+  if len(list1)>no_of_characters_per_line:
   
-   
+    make_line(list1[:no_of_characters_per_line],count) #creating a line
+    list2=list1[no_of_characters_per_line:]
+    
+    if(len(list2)<no_of_characters_per_line):
+      for a in range(len(list2),no_of_characters_per_line,1):
+        list2.append(base+'space.png')
+    make_line(list2,count+1)
+    count+=1
+    
+    #i-=len(list2)
+    
+    del list1,list2
+    list1=[]
+    list2=[]
+    continue"""
+  
+  
   if(len(list1)<no_of_characters_per_line):
-   for i in range(len(list1),no_of_characters_per_line,1):
-    list1.append('fonts/space.png')
+    for a in range(len(list1),50,1):
+      list1.append(base+'space.png')
   make_line(list1,count) #creating a line
   del list1
   list1=[]
   continue
 
 #checking the type of input and appending png in list1
- if(i>='a' and i<= 'z'):
+ if(listx[i]>='a' and listx[i]<= 'z'):
    
-   z=cursive+i.lower()+".png"
+   z=cursive+listx[i].lower()+".png"
 
- elif(i>='A' and i<='Z') :
+ elif(listx[i]>='A' and listx[i]<='Z') :
    
-   z=caps+i.lower()+".png"
+   z=caps+listx[i].lower()+".png"
 
- elif(i>="0" and i<="9") :
+ elif(listx[i]>="0" and listx[i]<="9") :
    
-   z=numbers+i.lower()+".bmp"
+   z=numbers+listx[i].lower()+".bmp"
 
- elif i==":":
+ elif listx[i]==":":
    z=symbols+"colon.bmp"
+
+ elif listx[i]=="/":
+   z=symbols+"slash.bmp"
  
- elif i==";":
+ elif listx[i]==";":
    z=symbols+"semicolon.bmp"
  
- elif i==".":
+ elif listx[i]==".":
    z=symbols+"dot.bmp"
 
- elif i==",":
+ elif listx[i]==",":
    z=symbols+"comma.bmp"
 
- elif i=='-':
+ elif listx[i]=='–':
    z=symbols+"dash.bmp"
  
- elif i==')':
+ elif listx[i]=='-':
+   z=symbols+"dash.bmp"
+ 
+ elif listx[i]==')':
    z=symbols+"rbr.bmp" 
  
- elif i=='(':
+ elif listx[i]=='(':
    z=symbols+"rbl.bmp" 
  
- elif i=='"':
+ elif listx[i]=='"':
    z=symbols+"apostrophe.bmp" 
 
- elif i=="'":
+ elif listx[i]=="'":
    z=symbols+"singleapostrophe.bmp"
  
- elif i=="&":
+ elif listx[i]=="&":
    z=symbols+"and.bmp"
  
- elif i=="!":
+ elif listx[i]=="!":
    z=symbols+"exclamation.bmp"
  
- elif i=="?":
+ elif listx[i]=="?":
    z=symbols+"questionmark.bmp"  
 
  else: 
@@ -198,6 +222,7 @@ for i in listx:
 for i in range(1,count+1,1):
   z=temp+str(i)+".png"
   list1.append(z)
+
 
 #merging all lines; 35 lines per page
 list2=[]
@@ -211,6 +236,8 @@ while(len(list1)!=0):
     #print("appending"+str(i))
     
     if len(list2)==no_of_lines_per_page:    #make page if all lines completed
+      list2.insert(0,base+"line.png")
+      list2.insert(len(list2),base+"line.png")
       make_page(list2,output+"final"+str(c)+".png")
       print("made page "+str(c))
       c+=1
@@ -221,6 +248,8 @@ while(len(list1)!=0):
       if len(list2)<no_of_lines_per_page:
         for i in range(len(list2),no_of_lines_per_page):
           list2.append(base+"line.png")
+      list2.insert(0,base+"line.png")
+      list2.insert(len(list2),base+"line.png")
       make_page(list2,output+"final"+str(c)+".png")
       print("made page "+str(c))
       list2.clear

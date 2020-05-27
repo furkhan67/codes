@@ -13,6 +13,8 @@ projects/python/assistant/dist
 projects/python/assistant/build
 projects/vb.net
 flutter/
+projects/python/Text_to_handwriting/bit_depth_converter.bash
+projects/python/Text_to_handwriting/CN
 
 # C extensions
 *.so

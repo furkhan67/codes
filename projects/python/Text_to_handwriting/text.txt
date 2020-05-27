@@ -1,18 +1,1 @@
-﻿Q1.
-
-The arrangement of a network which comprises of nodes and connecting lines via sender and receiver is referred as network topology. The various network topologies are :
-
-a) Mesh Topology :
-In mesh topology, every device is connected to another device via particular channel.
-
-b) Star Topology :
-​ In star topology, all the devices are connected to a single hub through a cable. This hub is the central node and all others nodes are connected to the central node. The hub can be passive ​in nature i.e. not intelligent hub such as broadcasting devices, at the same time the hub can be intelligent known as active ​hubs. Active hubs have repeaters in them.
-
-c) Bus Topology :
-​ Bus topology is a network type in which every computer and network device is connected to single cable. It transmits the data from one end to another in single direction. No bi-directional feature is in bus topology.
-
-d) Ring Topology :
-​ In this topology, it forms a ring connecting a devices with its exactly two neighbouring devices.
-
-e) Hybrid Topology :
-​This topology is a collection of two or more topologies which are described above. This is a scalable topology which can be expanded easily. It is reliable one but at the same it is a costly topology.
+﻿OSI Layers
