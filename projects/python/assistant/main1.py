@@ -1,26 +1,18 @@
 import speech_recognition as sr
 from gtts import gTTS
-import os
-import speak
-import listen
-import subprocess
+import os, subprocess, threading, requests, datetime, webbrowser, random, geocoder, time
 from time import ctime
+from itertools import count
+
 from tkinter import *
 from tkinter import CENTER
-import threading
-import requests
 from PIL import Image,ImageTk
-import datetime
-import webbrowser
-from itertools import count
-import play
 from tkinter import font
-import random
-import gif
-from news import news
-import geocoder
-import time
-from translate import translate
+
+#import .scripts.speak, .scripts.play, .scripts.listen, .scripts.gif
+from scripts.news import news
+from scripts import speak, play, listen, gif
+from scripts.translate import translate
 
 
 

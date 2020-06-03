@@ -4,8 +4,8 @@ from PIL import Image,ImageTk
 import speech_recognition as sr
 from gtts import gTTS
 import os
-import speak
-import listen
+from scripts import speak, play, listen, gif
+
 import subprocess
 from time import ctime
 from tkinter import *
@@ -16,10 +16,10 @@ from PIL import Image,ImageTk
 import datetime
 import webbrowser
 from itertools import count
-import play
+
 from tkinter import font
 import random
-import gif
+
 
 
 

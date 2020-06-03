@@ -1,6 +1,6 @@
 from PyDictionary import PyDictionary
 from gtts import gTTS
-import speak
+from scripts import speak
 
 dictionary=PyDictionary()
 dictm=dictionary.synonym("great")

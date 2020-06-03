@@ -1,4 +1,4 @@
-import speak
+from scripts import speak
 import requests
 from bs4 import BeautifulSoup
 

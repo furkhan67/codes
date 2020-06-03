@@ -1,5 +1,4 @@
 from gtts import gTTS
-import pyglet
 import time, os
 
 def say(text, lang):
@@ -7,8 +6,6 @@ def say(text, lang):
     filename = 'temp/temp.mp3'
     file.save(filename)
 
-    music = pyglet.media.load(filename, streaming = False)
-    music.play()
-
-    time.sleep(music.duration)
+    from playsound import playsound
+    playsound(filename)
     os.remove(filename)
