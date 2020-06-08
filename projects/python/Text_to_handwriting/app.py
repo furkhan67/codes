@@ -23,7 +23,7 @@ def make_line(list1,count):
  #min_shape = sorted( [(np.sum(i.size), i.size ) for i in imgs])[0][1]
  print("making line "+str(count))
  min_shape=(10*20,10*30)
- imgs_comb = np.hstack( (np.asarray( i.resize(min_shape) ) for i in imgs ) )
+ imgs_comb = np.hstack([np.asarray( i.resize(min_shape) ) for i in imgs])
  imgs_comb = Image.fromarray( imgs_comb)
  imgs_comb.save( temp+str(count)+'.png' ) 
  del imgs_comb
@@ -37,7 +37,7 @@ def make_page(img_list,filename):
  imgs    = [ Image.open(i) for i in list1 ]
  min_shape = sorted( [(np.sum(i.size), i.size ) for i in imgs])[0][1]
 # min_shape=(300*y,200*y)
- imgs_comb = np.vstack( (np.asarray( i.resize(min_shape) ) for i in imgs ) )
+ imgs_comb = np.vstack([np.asarray( i.resize(min_shape) ) for i in imgs ])
  imgs_comb = Image.fromarray( imgs_comb)
  imgs_comb.save(filename)
  img = Image.open(filename)
