@@ -1,6 +1,6 @@
 
 from django.shortcuts import render,get_object_or_404
-from .models import Course
+from .models import Course,Career
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 #from .forms import PostForm,ImageForm
@@ -19,6 +19,20 @@ def course_list_view(request):
     
     
     return render(request,'courses.html',{'course_list':course_list})
+
+def career_list_view(request):
+    career_list = Career.objects.all()
+    
+    
+    return render(request,'careers.html',{'course_list':career_list})
+
+
+def career_detail_view(request, pk):
+
+    career = Career.objects.get(id=pk)
+    
+    
+    return render(request,'career-single.html',{"course": career})
 
 
 def course_detail_view(request, pk):

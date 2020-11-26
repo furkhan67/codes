@@ -24,3 +24,16 @@ class Course(models.Model):
 
     def __str__(self):
         return self.Title
+
+
+class Career(models.Model):
+    
+    Title =models.CharField(max_length=256)
+    
+    body =models.TextField(null=True,blank=True)
+
+    image = models.ImageField(upload_to="images/")
+    
+
+    def __str__(self):
+        return self.Title
