@@ -2,7 +2,7 @@ gTTs==2.1.1
 pyglet==1.5.5
 SpeechRecognition==3.8.1
 geocoder==1.38.1
-Pillow==7.1.2
+Pillow==8.2.0
 requests
 PyAudio==0.2.11
 playsound==1.2.2
