@@ -1,0 +1,1 @@
+This repo contains PySpark tutorials. Tutorials 1-6 are ML using PySpark and Tutorials 7-8 are Spark streaming tutorials.

@@ -9,6 +9,7 @@ projects/django/HUDA_project
 projects/django/pc_build_project
 projects/django/chatbot
 html/
+Web-Attack_Detection&Classification_using_PySpark/
 uwp_scripts/
 projects/python/assistant/versions
 projects/python/assistant/dist
@@ -17,7 +18,7 @@ projects/vb.net
 flutter/
 projects/python/Text_to_handwriting/bit_depth_converter.bash
 projects/python/Text_to_handwriting/CN
-
+.ipynb_checkpoints
 # C extensions
 *.so
 

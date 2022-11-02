@@ -1,0 +1,1 @@
+This repo aims to deploy a Music Streaming Platform on AWS Cloud using the best Practices.
