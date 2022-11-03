@@ -1,0 +1,9 @@
+rf=.97064 maxdepth4,6 maxbins=32 uvs numtopfeatures=20
+rf= 0.970949 maxdepth=4,5,6 numtrees=3,5,10 uvs numtopfeatures=20
+rf = 0.96764 no uvs
+lr=.98985 uvs fpr=0.1
+lr=.991512 uvs numtopfeatures=20
+
+
+
+
