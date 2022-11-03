@@ -19,7 +19,7 @@ flutter/
 projects/python/Text_to_handwriting/bit_depth_converter.bash
 projects/python/Text_to_handwriting/CN
 .ipynb_checkpoints
-**/checkpoint
+checkpoint/
 # C extensions
 *.so
 
