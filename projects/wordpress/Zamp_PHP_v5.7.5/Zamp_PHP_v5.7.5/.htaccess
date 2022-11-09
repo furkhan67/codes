@@ -1,6 +1,0 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine on
-    
-    RewriteCond %{REQUEST_URI} !(css|data|images|js|libs)/(.*?)\.(inc|php|js|png|gif|jpeg|jpg|bmp|css|html|htm|swf|ico|flv)$ [NC]
-    RewriteRule ^(.*)$ index.php
-</IfModule>
