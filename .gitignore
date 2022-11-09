@@ -8,6 +8,8 @@ projects/django/SES
 projects/django/HUDA_project
 projects/django/pc_build_project
 projects/django/chatbot
+projects/django/Smart_Inventory_Management/.idea
+projects/django/Smart_Inventory_Management/Documentation.docx
 projects/wordpress
 projects/python/speech/ttsw.py
 html/
@@ -24,6 +26,7 @@ checkpoint/
 lr-model/
 prbyclasslr.jpg
 UNSW-NB15.csv
+.vscode
 # C extensions
 *.so
 
